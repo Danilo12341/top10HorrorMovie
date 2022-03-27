@@ -1,0 +1,41 @@
+ function mudarFoto (foto){
+            document.getElementById("menuimagem").src= foto;
+
+ }
+ function calcularImc(){
+
+ 	var formulario = document.getElementById("formulario");
+
+ 	var Quilos = parseFloat(formulario.tKilos.value);
+ 	var cm = parseFloat(formulario.tCm.value);
+ 	var altura = cm/100;
+    var nome = formulario.tNome.value
+ 	var imc = Quilos/(altura*altura);
+ 	
+ 	formulario.tImc.value=imc.toFixed(2);
+
+ 	if (imc>0 && imc < 18.5){
+      alert(nome + ", Atenção! você está baixo do peso padrão");
+ 	}
+ 	if (imc > 18.5 && imc <24.9){
+ 		alert(nome +", Parabéns!! você está com o peso ideal");
+ 	}
+ 	if (imc >24.9 && imc < 29.9){
+ 		alert(nome +", você está com sobrepeso");
+ 	}
+ 	if (imc > 29.9 && imc < 34.9){
+ 		alert(nome +", Atenção! você está com obesidade Moderada");
+ 	}
+ 	if (imc > 35.9 && imc < 39.9){
+ 		alert(nome +", Atenção! você está com obesidade Severa");
+ 	}
+ 	if (imc > 40 && imc < 49.9){
+        alert(nome +", Atenção! você está com obesidade Mórbida");
+ 	}
+ 	if (imc >  50){
+ 		alert(nome +", Atenção! você está com  super obesidade");
+
+ 	}
+ 	
+ 	}
+    
